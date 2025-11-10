@@ -1,0 +1,269 @@
+:root {
+    --primary-color: #E50914; /* Rojo Netflix como primario */
+    --secondary-color: #F5F5F1;
+    --dark-color: #141414;
+    --dark-surface: #222222;
+    --light-color: #FFFFFF;
+    --light-surface: #f8f9fa;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Light Theme (Default) --- */
+html[data-theme='light'] {
+    --bg-color: var(--light-surface);
+    --text-color: var(--dark-color);
+    --surface-color: var(--light-color);
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+    --navbar-text: var(--dark-color);
+    --footer-bg: #343a40;
+    --footer-text: var(--light-color);
+}
+
+/* --- Dark Theme --- */
+html[data-theme='dark'] {
+    --bg-color: var(--dark-color);
+    --text-color: var(--secondary-color);
+    --surface-color: var(--dark-surface);
+    --navbar-bg: rgba(20, 20, 20, 0.8);
+    --navbar-text: var(--secondary-color);
+    --footer-bg: #000000;
+    --footer-text: var(--secondary-color);
+}
+
+body {
+    padding-top: 56px;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header y Navegación */
+.header-con-fondo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://t4.ftcdn.net/jpg/02/82/00/75/360_F_282007508_wdCUP7hUMNK1Cuzj7XmOcFmzyzJ0Nnp9.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s;
+}
+
+.navbar-brand, .nav-link, #cartIcon, #theme-toggle {
+    color: var(--navbar-text) !important;
+    transition: color 0.3s;
+}
+
+.navbar-brand {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+#cartCount {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    font-size: 0.7rem;
+    border: 2px solid var(--surface-color);
+}
+
+/* Animación para el contador del carrito */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+/* Tarjetas de Vehículos */
+.card {
+    background-color: var(--surface-color);
+    border: 1px solid #444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5), 0 0 40px var(--primary-color);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.card-title {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.card-text {
+    color: var(--text-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #ff0a16;
+    border-color: #ff0a16;
+    box-shadow: 0 0 10px #ff0a16;
+}
+
+/* Sección del Fundador */
+#founder {
+    background-color: var(--surface-color);
+    padding: 4rem 0;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+}
+
+.founder-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.7);
+}
+
+.founder-name {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.founder-title {
+    font-style: italic;
+    color: #aaa;
+}
+
+.founder-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Modales */
+.modal-content {
+    background-color: var(--dark-surface);
+    color: var(--text-color);
+    border: 1px solid #555;
+}
+
+.modal-header {
+    border-bottom: 1px solid #555;
+}
+
+.modal-footer {
+    border-top: 1px solid #555;
+}
+
+.form-control {
+    background-color: #333;
+    color: var(--text-color);
+    border: 1px solid #555;
+}
+
+.form-control:focus {
+    background-color: #444;
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(229, 9, 20, 0.25);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+/* --- Nuevas Vistas (Detalle y Checkout) --- */
+
+/* Estilo para la vista de detalles */
+#detailViewContainer {
+    animation: fadeIn 0.5s;
+}
+
+.detail-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.detail-info h2 {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.detail-info .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.detail-specs {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.detail-specs li {
+    background-color: var(--surface-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.detail-specs li strong {
+    display: block;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Estilo para la vista de checkout */
+#checkoutViewContainer {
+    animation: fadeIn 0.5s;
+}
+
+.checkout-form .form-section {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid #444;
+}
+
+.checkout-summary {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+    position: sticky;
+    top: 100px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
